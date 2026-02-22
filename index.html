@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - 3rd Batch DIT</title>
+    <link href="third.css" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #0f172a;
+            color: blue;
+            min-height: 100vh;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('11623.jpg') center center / cover no-repeat;
+            filter: brightness(0.35) saturate(0.7);
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(30, 58, 138, 0.45) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 0.9s ease both;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.75);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #bfdbfe;
+            font-size: 0.75rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 7vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+            margin-bottom: 14px;
+        }
+
+        .hero h1 span { color: #60a5fa; }
+
+        .hero p {
+            font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+            color: rgba(255,255,255,0.75);
+            max-width: 480px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .section {
+            position: relative;
+            z-index: 2;
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 28px 22px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.25s ease, background 0.25s ease;
+            animation: fadeUp 0.9s ease both;
+                background: rgba(15, 30, 80, 0.55);
+}
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(37, 99, 235, 0.15);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .card h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #e0f2fe;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 26px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+        .btn-primary:hover { background: #1d4ed8; transform: scale(1.03); }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1.5px solid rgba(255,255,255,0.4);
+            margin-top: 14px;
+            width: 100%;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.08); }
+
+        footer {
+            background: rgba(0,0,0,0.6);
+            text-align: center;
+            padding: 18px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.45);
+            position: relative;
+            z-index: 2;
+        }
+        footer a { color: #60a5fa; text-decoration: none; }
+
+        /* ── ANIMATION ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    @media (max-width: 600px) {
+    .hero h1 { font-size: 1.8rem; }
+    .hero p { font-size: 0.85rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .card { padding: 22px 16px; }
+}
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <div class="hero-badge">ICST Ozamiz City</div>
+        <h1>Welcome to <span>3rd Batch</span><br>DIT Family 👨‍💻</h1>
+        <p>—17 future Developers, developing how to let go of someone who felt like home to us, debugging the heartbroken lines of code, hoping that it can still be fixed.</p>
+        <a href="https://www.facebook.com/icst.oc" target="_blank">
+            <button class="btn btn-primary">Visit ICST Facebook</button>
+        </a>
+    </div>
+</div>
+
+<div class="section">
+    <div class="cards-grid">
+
+        <div class="card">
+            <div class="card-icon">🎓</div>
+            <h2>About Our Batch</h2>
+            <p>We are the 3rd Batch of DIT — aspiring developers, creative designers, and future tech innovators.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🚀</div>
+            <h2>Our Mission</h2>
+            <p>To Debug first, panic later</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">👥</div>
+            <h2>List of Students</h2>
+            <p>Meet the 17 future developers of 3rd Batch DIT!</p>
+            <button id="batones" class="btn btn-outline" onclick="window.location.href='students.html'">Click to see</button>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    S.Y 2026-2027 &mdash; 3rd Batch DIT &mdash; <a href="https://www.facebook.com/icst.oc" target="_blank">ICST</a>
+</footer>
+
+<script src="dit.js"></script>
+
+</body>
+</html>
